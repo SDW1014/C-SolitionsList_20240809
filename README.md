@@ -1,1 +1,2 @@
-# C++SolitionsList
+# C++ 연습용 README
+이것은 연습용 C++ 입니다.
