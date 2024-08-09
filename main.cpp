@@ -1,10 +1,18 @@
 #include <iostream>
 
-// std를 사용하는 대신, 각 함수와 변수마다 std::를 사용하는 것이 더 좋습니다. 
-// 이렇게 하면 코드의 가독성이 높아지고, 어떤 네임스페이스에서 오는 것인지 명확해집니다.
+// 이 코드는 C++의 기본 입출력 라이브러리를 포함합니다.
+// main 함수는 프로그램의 시작 지점입니다.
+// std::cout은 콘솔에 출력을 위한 객체입니다.
+// std::endl은 줄 바꿈을 위한 조작자입니다.
+// "CODING"과 "## ##" 문자열을 출력합니다.
+// 마지막으로, 프로그램은 0을 반환하여 정상 종료를 나타냅니다.
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	std::cout << "CODING" << std::endl;
+	std::cout << "## ##" << std::endl;
+	std::cout << "std::cout \"CODING\"" << std::endl;
+	std::cout << "std::cout << std::end;" << std::endl;
+	std::cout << "std:;cout << \"## ##\"" << std::endl;
 	return 0;
 }
