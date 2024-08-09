@@ -1,10 +1,20 @@
 #include <iostream>
 
-// std를 사용하는 대신, 각 함수와 변수마다 std::를 사용하는 것이 더 좋습니다. 
-// 이렇게 하면 코드의 가독성이 높아지고, 어떤 네임스페이스에서 오는 것인지 명확해집니다.
+// 변수 t를 만든다. 
+// 변수에 5를 넣는다.
+// 그리고 1씩 증가하는걸 출력하고
+// 2씩 감소하는걸 출력하라
+
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	int t = 5; 
+	
+	for (int i = 0; i < 3; ++i)
+		std::cout << t + i << std::endl;
+
+	for (int i = 0; i < 5; i+=2)
+		std::cout << t - i << std::endl;
+	
 	return 0;
 }
