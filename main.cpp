@@ -1,12 +1,13 @@
 #include <iostream>
 
 // [2024-08-11]
-// 제목 : LV3으로 넘어간다.
-
+// 문제 5번
+// 숫자를 3부터 10까지 For문을 이용해서 출력 해 주세요
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
-
+	for(int i = 3; i <= 10; ++i)
+		std::cout << i << std::endl;
+		
 	return 0;
 }
