@@ -1,12 +1,13 @@
 #include <iostream>
 
 // [2024-08-11]
-// 제목 : LV3으로 넘어간다.
-
+// 문제 15번: -5 ~ 5 까지 출력 해주세요.
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	for(int i = -5; i <= 5; ++i)
+		std::cout << i << " " ;
+	std::cout << std::endl;
 
 	return 0;
 }
