@@ -1,12 +1,13 @@
 #include <iostream>
 
 // [2024-08-11]
-// 제목 : LV3으로 넘어간다.
-
+// 문제 7번
+// "PIZZAHOT" 이라는 문장을 25번 출력 하세요
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	for(int i = 0 ; i < 25; ++i)
+		std::cout << "PIZZAHOT" << std::endl;
 
 	return 0;
 }
