@@ -1,6 +1,6 @@
 #include <iostream>
 
-// [2024-08-14]
+// [2024-08-15]
 // 제목 : LV6
 
 int main()
