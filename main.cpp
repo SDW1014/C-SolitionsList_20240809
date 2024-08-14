@@ -1,7 +1,7 @@
 #include <iostream>
 
 // [2024-08-15]
-// 제목 : LV6
+// 제목 : LV7
 
 int main()
 {
