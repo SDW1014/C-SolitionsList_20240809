@@ -1,21 +1,56 @@
 #include <iostream>
 
 // [2024-08-15]
-// 제목 : LV7
+// 문제 11번
+// input함수에서 숫자 1개를 입력받아주세요
+// 그리고 process함수에서 그 숫자로 부터 1씩 더한 값들을 배열에 채워주세요
+// 그리고 output함수에서 출력 해 주세요
+// 
+// ex) 만약 5를 입력받았다면
+// |  3  |  4  |  5  |
+// | --- | --- | --- |
+// |  6  |  7  |  8  |
+// | --- | --- | --- |
+// |  9  |  10 |  11 |
+// | --- | --- | --- |
+// 
+// ## 입력 예시
+// 3
+// ## 출력 예시
+// 3 4 5
+// 6 7 8
+// 9 10 11
 
-// 2차원 배열
-// - [](대괄호)를 두 번 사용하여 선언
-// - 첫번째는 세로의 크기, 두번째는 가로의 크기
-// - 수학에서처럼 y,x로 표기하는 습관
+void input(int &input)
+{
+	std::cin >> input;
+}
 
-// 나머지 연산자
-// - 홀짝 및 배수 구분
+void process(int arr[3][3], int input)
+{
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			arr[i][j] = input + (3 * i) + j;
+}
 
-// 카운팅
+void output(int arr[3][3])
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+			std::cout << arr[i][j] << " ";
+		std::cout << std::endl;
+	}
+}
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	int num;
+	input(num);
 
+	int arr[3][3];
+	process(arr, num);
+	output(arr);
+	
 	return 0;
 }
