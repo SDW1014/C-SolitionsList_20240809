@@ -1,21 +1,36 @@
 #include <iostream>
 
 // [2024-08-15]
-// 제목 : LV7
+// 문제 8번
+// 배열 하드코딩
+// - 예시 배열 : 
+//   int 배열[3][3] = { {3, 4, 1}, 
+//                       {2, 1, 4}, 
+//                       {3, 3, 0} };
+// - 홀수와 짝수의 개수를 세기 위한 카운팅 변수 필요
+// - 0은 짝수로 취급
 
-// 2차원 배열
-// - [](대괄호)를 두 번 사용하여 선언
-// - 첫번째는 세로의 크기, 두번째는 가로의 크기
-// - 수학에서처럼 y,x로 표기하는 습관
 
-// 나머지 연산자
-// - 홀짝 및 배수 구분
-
-// 카운팅
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	int arr[3][3] = { {3, 4, 1}, {2, 1, 4}, {3, 3, 0} };
+
+	int evenCount = 0;
+	int oddCount = 0;
+
+	for(int i = 0; i < 3; ++i)
+	{
+		for(int j = 0; j < 3; ++j)
+		{
+			if(arr[i][j] % 2 == 0)
+				++evenCount;
+			else
+				++oddCount;
+		}
+	}
+
+	std::cout << "짝수 : " << evenCount << ", 홀수 : " << oddCount << std::endl;
 
 	return 0;
 }
