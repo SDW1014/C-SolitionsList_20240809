@@ -16,6 +16,8 @@ int main()
 	int arr[6][3] = {0};
 	int top, bottom;
 
+	std::cin >> top >> bottom;
+
 	for(int i = 0; i < 6; ++i)
 	{
 		for(int j = 0; j < 3; ++j)
