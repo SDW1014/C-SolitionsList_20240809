@@ -11,10 +11,34 @@
 // 5. 입력받은 문자들을 반복문을 통해 확인하고, 'A'가 발견될 때마다 카운트를 증가시키고 인덱스를 저장합니다.
 // 6. 최종적으로 'A'의 개수와 인덱스를 출력합니다.
 
+char arr[5] = {0};
+
+int count = 0;
+
+void CountA()
+{
+	for(int i = 0; i < 5; i++)
+		if(arr[i] == 'A')
+			count++;
+}
+
+void PrintIndex()
+{
+	for(int i = 0; i < 5; i++)
+		if(arr[i] == 'A')
+			std::cout << i << " 번째에 있습니다." << std::endl;
+}
 
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	for(int i = 0; i < 5; i++)
+		std::cin >> arr[i];
+
+	CountA();
+
+	std::cout << count << std::endl;
+
+	PrintIndex();
 
 	return 0;
 }
