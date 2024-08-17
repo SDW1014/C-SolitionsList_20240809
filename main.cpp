@@ -1,36 +1,30 @@
 #include <iostream>
 
 // [2024-08-17]
-// 제목 : LV11 - 포인터를 이용한 값의 복사 [얕은 복사, 깊은 복사]
+// 제목 : LV11 - 플래그 코딩 기법
+// 1. 뭐 거창한게 있는건 아니고, 플래그 세워놓고 체크하는 그런 기법을 의미함
 
-// 얕은 복사
-void swap(int a, int b)
-{
-	int temp = a;
-	a = b; 
-	b = temp;
-}
-
-// 깊은 복사
-void swap(int* a, int* b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
 
 int main()
 {
-	int num1 = 100;
-	int num2 = 200;
+	int arr[10] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3 };
+	int flag = 0;
 
-	swap(num1, num2);
-	std::cout << "얕은 복사 (변경 되지 않음) : ";
-	std::cout << "num1 : " << num1 << ", num2 : " << num2 << std::endl;
+	for(size_t i = 0; i < 8; ++i)
+	{
+		if(arr[i] == 3)
+		{
+			flag = 1;
+			break;
+		}
+	}
 
-	swap(&num1, &num2);
-	std::cout << "깊은 복사 (변경 됨) : ";
-	std::cout << "num1 : " << num1 << ", num2 : " << num2 << std::endl;
+	if(flag == 1)
+		std::cout << "3이 있습니다." << std::endl;
+	else
+		std::cout << "3이 없습니다." << std::endl;
+
+	
 
 	return 0;
 }
