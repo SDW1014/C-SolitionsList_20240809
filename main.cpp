@@ -1,21 +1,36 @@
 #include <iostream>
 
 // [2024-08-17]
-// 제목 : LV11 - 변수의 자료형 일치
-// 1. 주소값을 저장하는 용도로 void* 를 사용
-// 2. 해당 주소로 이동했을 떄 알맞은 크기 만큼 접근하기 위해서 포이넡 변수의 자료형과 실제 변수의 자료형을 맞춰야 한다.
+// 제목 : LV11 - 포인터를 이용한 값의 복사 [얕은 복사, 깊은 복사]
+
+// 얕은 복사
+void swap(int a, int b)
+{
+	int temp = a;
+	a = b; 
+	b = temp;
+}
+
+// 깊은 복사
+void swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
 
 int main()
 {
-	int number = 0;
+	int num1 = 100;
+	int num2 = 200;
 
-	void* p = &number;
+	swap(num1, num2);
+	std::cout << "얕은 복사 (변경 되지 않음) : ";
+	std::cout << "num1 : " << num1 << ", num2 : " << num2 << std::endl;
 
-	int* numberCopy = &number;
-	*numberCopy = 100;
-
-	char ch = 'A';
-	char* pCh = &ch;
+	swap(&num1, &num2);
+	std::cout << "깊은 복사 (변경 됨) : ";
+	std::cout << "num1 : " << num1 << ", num2 : " << num2 << std::endl;
 
 	return 0;
 }
