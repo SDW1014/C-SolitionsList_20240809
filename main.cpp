@@ -1,7 +1,7 @@
 #include <iostream>
 
 // [2024-08-18]
-// 제목 : LV12 - 복습문제
+// 제목 : LV13
 
 int main()
 {
