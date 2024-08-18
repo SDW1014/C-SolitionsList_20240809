@@ -3,42 +3,30 @@
 // [2024-08-18]
 // 제목 : LV12 - 연습문제
 
+// 문제 6번
+// 전역 배열에 'M', 'I', 'N', 'Q', 'U', 'E', 'S', 'T' 문자를 하드코딩합니다.
+// Length 함수는 문자 하나를 받아서 해당 문자의 배열 인덱스를 반환합니다.
+// main 함수에서는 사용자로부터 문자 3개를 입력받고, 
+// Length 함수를 3번 호출하여 각 문자의 인덱스를 출력하는 프로그램을 작성합니다.
+
+char letters[] = {'M', 'I', 'N', 'Q', 'U', 'E', 'S', 'T'};
+
+int Length(char c) {
+    for (int i = 0; i < 8; i++) {
+        if (letters[i] == c) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 int main()
 {
-	int arr[3][3] = {};
-	int num = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-		{
-			arr[y][x] = num;
-			num++;
-		}
-	}
-
-	int arr2[3][3] = {};
-	int num2 = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 2-y; x < 3; ++x)
-		{
-			arr2[y][x] = num2;
-			num2++;
-		}
-	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr[y][x] << " ";
-		std::cout << std::endl;
-	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr2[y][x] << " ";
-		std::cout << std::endl;
-	}
+	char c1, c2, c3;
+	std::cout << "세 문자를 입력하세요: ";
+	std::cin >> c1 >> c2 >> c3;
+	std::cout << "첫 번째 문자의 인덱스: " << Length(c1) << std::endl;
+	std::cout << "두 번째 문자의 인덱스: " << Length(c2) << std::endl;
+	std::cout << "세 번째 문자의 인덱스: " << Length(c3) << std::endl;
 	return 0;
 }
