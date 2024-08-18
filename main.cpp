@@ -3,42 +3,42 @@
 // [2024-08-18]
 // 제목 : LV12 - 연습문제
 
+// 문제 10번 
+// 숫자 1개와 문자 1개를 입력받아 5x5 배열을 0으로 초기화한 후,
+// 해당 숫자에 해당하는 줄에 문자로 채우고 나머지는 0으로 출력하는 문제입니다.
+
+// 1. 숫자와 문자를 입력받습니다.
+// 2. 5x5 배열을 0으로 초기화합니다.
+// 3. 입력받은 숫자에 해당하는 줄을 입력받은 문자로 채웁니다.
+// 4. 배열을 출력합니다.
+
+// 주의사항:
+// - 입력받은 숫자는 1부터 5까지의 범위여야 하며, 그에 따라 배열의 인덱스는 0부터 4까지입니다.
+// - 문자는 배열의 해당 줄에 5개가 채워져야 하며, 나머지 공간은 0으로 남겨야 합니다.
+// - 배열을 출력할 때는 각 요소를 공백으로 구분하여 출력합니다.
+
 int main()
 {
-	int arr[3][3] = {};
-	int num = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-		{
-			arr[y][x] = num;
-			num++;
-		}
-	}
+	int arr[5][5] = {0};
 
-	int arr2[3][3] = {};
-	int num2 = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 2-y; x < 3; ++x)
-		{
-			arr2[y][x] = num2;
-			num2++;
-		}
-	}
+	int a;
+	char b;
+	std::cin >> a >> b;
 
-	for(size_t y = 0; y < 3; ++y)
+	for(int i = 5 - 1; i >= 0; --i)
+		arr[a][i] = b + (4 - i);
+	
+	for (int i = 0; i < 5; ++i)
 	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr[y][x] << " ";
+		for (int j = 0; j < 5; ++j)
+		{
+			if (arr[i][i] == 0)
+				std::cout << '0';
+			else
+				std::cout << static_cast<char>(arr[i][j]);
+		}
 		std::cout << std::endl;
 	}
 
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr2[y][x] << " ";
-		std::cout << std::endl;
-	}
 	return 0;
 }
