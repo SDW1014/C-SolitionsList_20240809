@@ -3,42 +3,26 @@
 // [2024-08-18]
 // 제목 : LV12 - 연습문제
 
+// 문제 4번 
+// 사용자로부터 숫자를 입력받고, 2중 for문을 사용하여 입력받은 숫자만큼 라인을 출력하는 로직을 주석으로 설명합니다.
+// 1. 사용자로부터 숫자를 입력받습니다.
+// 2. 입력받은 숫자 n에 대해, 0부터 n-1까지 반복하는 외부 for문을 사용합니다.
+// 3. 내부 for문에서는 1부터 3까지 반복하여 숫자를 출력합니다.
+// 4. 각 외부 for문 반복 후 줄바꿈을 합니다.
+
 int main()
 {
-	int arr[3][3] = {};
-	int num = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-		{
-			arr[y][x] = num;
-			num++;
-		}
-	}
+	size_t n; 
+	std::cin >> n;
 
-	int arr2[3][3] = {};
-	int num2 = 1;
-	for(size_t y = 0; y < 3; ++y)
+	for(int i = 0; i < n; ++i)
 	{
-		for(size_t x = 2-y; x < 3; ++x)
+		for(int j = 1; j <= 3; ++j)
 		{
-			arr2[y][x] = num2;
-			num2++;
+			std::cout << j;
 		}
-	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr[y][x] << " ";
 		std::cout << std::endl;
 	}
 
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr2[y][x] << " ";
-		std::cout << std::endl;
-	}
 	return 0;
 }
