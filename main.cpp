@@ -1,36 +1,17 @@
 #include <iostream>
 
 // [2024-08-19]
-// 제목 : LV14 - 버블정렬, 선택정렬 (선택정렬)
+// 제목 : LV14 - 버블정렬, 선택정렬 (여러문장 입력받기)
 
-// 선택정렬
+// 여러문장 입력받기
 int main()
 {
-	int arr[6] = { 5,3,6,2,1,8 };
+	char str[3][256] = {};
 
-	for(int i = 0; i < 6; ++i)
-	{
-		std::cout << arr[i] << " ";
-	}
-	std::cout << std::endl;
+	std::cin >> str[0];
 
-	for(int i = 0; i < 6; ++i)
-	{
-		for(int j = i+1; j < 6; ++j)
-		{
-			if (arr[i] > arr[j])
-			{
-				int temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-		}
-	}
+	std::cin >> str[1];
 
-	for(int i = 0; i < 6; ++i)
-	{
-		std::cout << arr[i] << " ";
-	}
-	std::cout << std::endl;
+	std::cin >> str[2];
 	return 0;
 }
