@@ -1,9 +1,9 @@
 #include <iostream>
 
 // [2024-08-19]
-// 제목 : LV14 - 버블정렬, 선택정렬 (버블정렬)
+// 제목 : LV14 - 버블정렬, 선택정렬 (선택정렬)
 
-// 버블정렬
+// 선택정렬
 int main()
 {
 	int arr[6] = { 5,3,6,2,1,8 };
@@ -16,13 +16,13 @@ int main()
 
 	for(int i = 0; i < 6; ++i)
 	{
-		for(int j = 0; j < 6 - i - 1; ++j)
+		for(int j = i+1; j < 6; ++j)
 		{
-			if(arr[j] > arr[j + 1])
+			if (arr[i] > arr[j])
 			{
-				int temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
 			}
 		}
 	}
