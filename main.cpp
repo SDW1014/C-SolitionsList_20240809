@@ -3,42 +3,49 @@
 // [2024-08-18]
 // 제목 : LV12 - 연습문제
 
+// 문제 5번
+// 1. 숫자 하나를 입력 받는다. 
+// 2. 2차 배열에 아래와 같은 모양으로 값을 채운 후 출력한다. 
+// 3. 만약 숫자 1을 입력받았다면 숫자 1부터 값을 아래와 같은 모양으로 채워주세요
+// |   |   | 1 | 2 |
+// |   | 3 | 4 | 5 |
+// | 6 | 7 | 8 | 9 |
+// 4. 만약 숫자 2를 입력받았다면 숫자 2부터 값을 아래와 같은 모양으로 채워주세요
+// |   |   | 2 |  3 |
+// |   | 4 | 5 |  6 |
+// | 7 | 8 | 9 | 10 |
+
+
+
 int main()
 {
-	int arr[3][3] = {};
-	int num = 1;
-	for(size_t y = 0; y < 3; ++y)
+	int arr[3][4] = {0};
+
+	int inputIndex = 0;
+	std::cin >> inputIndex;
+	for(int i = 0; i < 3; ++i)
 	{
-		for(size_t x = 0; x < 3; ++x)
+		for(int j = 0; j < 4; ++j)
 		{
-			arr[y][x] = num;
-			num++;
+			if(j > 1 - i)
+			{
+				arr[i][j] = inputIndex;
+				++inputIndex;
+			}
 		}
 	}
 
-	int arr2[3][3] = {};
-	int num2 = 1;
-	for(size_t y = 0; y < 3; ++y)
+	for(int i = 0; i < 3; ++i)
 	{
-		for(size_t x = 2-y; x < 3; ++x)
+		for(int j = 0; j < 4; ++j)
 		{
-			arr2[y][x] = num2;
-			num2++;
+			if (arr[i][j] != 0)
+				std::cout << arr[i][j] << " ";
+			else
+				std::cout << "  ";
 		}
-	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr[y][x] << " ";
 		std::cout << std::endl;
 	}
 
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr2[y][x] << " ";
-		std::cout << std::endl;
-	}
 	return 0;
 }
