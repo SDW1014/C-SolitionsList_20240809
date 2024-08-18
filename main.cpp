@@ -3,42 +3,19 @@
 // [2024-08-18]
 // 제목 : LV12 - 연습문제
 
+// 문제 1번
+// 1. 문장을 입력받는다.
+// 2. 입력받은 문장을 5번 출력한다. for이용
+// 3. ex) input : "ABC" -> output : "ABCABCABCABC"
+
 int main()
 {
-	int arr[3][3] = {};
-	int num = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-		{
-			arr[y][x] = num;
-			num++;
-		}
-	}
+	char str[256] = {};
+	std::cout << "문장을 입력하세요 : ";
+	std::cin >> str;
 
-	int arr2[3][3] = {};
-	int num2 = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 2-y; x < 3; ++x)
-		{
-			arr2[y][x] = num2;
-			num2++;
-		}
-	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr[y][x] << " ";
-		std::cout << std::endl;
-	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr2[y][x] << " ";
-		std::cout << std::endl;
-	}
+	for (size_t i = 0; i < 5; ++i)
+		std::cout << str << std::endl;
+		
 	return 0;
 }
