@@ -3,42 +3,23 @@
 // [2024-08-18]
 // 제목 : LV12 - 연습문제
 
+// 문제 3번
+// 하나의 숫자를 입력 받아 2중 for문을 이용하여 해당 숫자부터 1까지의 숫자를 출력한다.
+// 각 숫자는 입력받은 숫자부터 1까지의 숫자에 대해 해당 숫자만큼 반복하여 출력한다.
+// 입력받은 숫자를 num 변수에 저장하고, 첫 번째 for문은 num부터 1까지 반복하며,
+// 두 번째 for문은 num만큼 반복하여 현재 숫자를 출력한다.
+
 int main()
 {
-	int arr[3][3] = {};
-	int num = 1;
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-		{
-			arr[y][x] = num;
-			num++;
-		}
-	}
+	int num;
+	std::cin >> num;
 
-	int arr2[3][3] = {};
-	int num2 = 1;
-	for(size_t y = 0; y < 3; ++y)
+	for(size_t i = num; i >= 1; --i)
 	{
-		for(size_t x = 2-y; x < 3; ++x)
-		{
-			arr2[y][x] = num2;
-			num2++;
-		}
-	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr[y][x] << " ";
+		for(size_t j = 0; j < 4; ++j)
+			std::cout << i;
 		std::cout << std::endl;
 	}
-
-	for(size_t y = 0; y < 3; ++y)
-	{
-		for(size_t x = 0; x < 3; ++x)
-			std::cout << arr2[y][x] << " ";
-		std::cout << std::endl;
-	}
+	
 	return 0;
 }
