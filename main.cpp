@@ -1,32 +1,31 @@
 #include <iostream>
 
-// [2024-08-19]
-// 제목 : LV15 - 포인터 변수의 원리와 문자열 (포인터 변수의 활용)
+// [2024-08-21]
+// 제목 : LV15 - 포인터 변수의 원리와 문자열 (문자열 비교)
 
-// 포인터 변수의 활용
-
-int strLen(char *ch)
+// 문자열 비교
+int main()
 {
-	int Length = 0;
+	char strA[256] = "Hello";
+	char strB[256] = "Hello";
 
-	for(size_t i = 0; i < 10; ++i)
+	int flag = 0;
+	for(size_t i = 0; i < 256; ++i)
 	{
-		if(ch[i] == '\0')
+		if(strA[i] != strB[i])
 		{
-			Length = i;
+			flag = 1;
 			break;
 		}
 	}
-	return Length;
-}
-int main()
-{
-	char str[3][10] = {"Hello", "World", "C++"};
 
-	for(size_t i = 0; i < 3; ++i)
+	if(flag == 1)
 	{
-		int len = strLen(str[i]);
-		std::cout << len << std::endl;
+		std::cout << "다르다.";
+	}
+	else
+	{
+		std::cout << "같다.";
 	}
 
 	return 0;
